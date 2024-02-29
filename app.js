@@ -14,7 +14,7 @@ const bindData = articles => {
     const { content: newsCardTemplate } = document.getElementById('template-news-card');
     cardsContainer.innerHTML = '';
 
-   try {
+    try {
         articles.forEach(article => {
             if (!article.urlToImage) return;
             const cardClone = newsCardTemplate.cloneNode(true);
@@ -25,6 +25,7 @@ const bindData = articles => {
         console.error("Error occurred while binding data:", error);
     }
 };
+
 
 
 
