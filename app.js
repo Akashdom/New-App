@@ -21,6 +21,27 @@ async function fetchNews(query) {
         // cardsContainer.appendChild(cardClone);
     // });
 // }
+const fillDataInCard = (cardClone, article) => {
+    // Assuming 'fillDataInCard' function populates various fields in the card
+    // Including the image field, let's say it's an <img> tag with id 'card-image'
+    const imageElement = cardClone.getElementById('card-image');
+
+    // Replace 'article.urlToImage' with the actual image URL property from your article object
+    const imageUrl = article.urlToImage;
+
+    // Here, you can handle the deflated image
+    // For example, you can inflate or process it in some way
+    // Let's say we're just setting the src attribute for simplicity
+    imageElement.src = processDeflatedImage(imageUrl);
+};
+
+const processDeflatedImage = (imageUrl) => {
+    // Here, you would implement the logic to process or inflate the deflated image
+    // This could involve decompression, resizing, or any other necessary processing
+    // For the sake of this example, let's just return the original URL
+    return imageUrl;
+};
+
 const bindData = articles => {
     const cardsContainer = document.getElementById('cards-container');
     const { content: newsCardTemplate } = document.getElementById('template-news-card');
@@ -33,6 +54,7 @@ const bindData = articles => {
         cardsContainer.appendChild(cardClone);
     });
 };
+
 
 
 function fillDataInCard(cardClone, article) {
